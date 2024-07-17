@@ -1,0 +1,40 @@
+@mixin rwd($breakpoint) {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+
+  *,
+  *::before,
+  *::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body{
+    background-color: #242424;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+}
+  .container{
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .navegacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    @include rwd(991px){
+        flex-direction: column;
+        align-items: center;
+    }
+  }
